@@ -1,0 +1,43 @@
+----------------------------------------Review Sprint 1--------------------------------------------
+
+
+1- Nous avons commmencé par creer un projet sur https://gitlab.univ-lorraine.fr Puis invité tous les membres de l'equipe du projet .
+2- Nous avons installer GIT .Puis on s'est familiariser avec quelques commandes primitives de git afin de les utiliser dans notre projet .
+3-Nous avons essayer de creer une clé SSH public dans gitlab mais la clé SSH n'est pas disponible dans l'onglet clone sur gitlab.Du coups ,on s'est contenté d'utiliser HTTPS pour excecuter la commande clone dans GIT Bash.
+4-On a realisé un backlog dont on a expliqué les premieres fonctionnalités du jeu .puis on a creer un diagramme de classe associé à ce backlog à l'aide du plugin UMLet disponible sur eclipse .
+5-On a modifié le README.txt de telle facon à avoir les commandes nécessaires pour la première connexion. 
+6-Nous avons essayer d'utiliser Maven comme outils de compilation et d'éxecution  .
+7-afin d'organiser le deroulement du projet ,nous avons opté pour la solution Jira Software  .
+
+----------------------------------------Review Sprint 2--------------------------------------------
+
+-Nous avons commancer par creer une premiere version ou l'heros se deplace sur le vide .
+-Puis,on a ajouter des animations de l'heros (idle ,running,attacks).
+-On a ajouter un arriere plan et un cadre a notre jeu .
+-On a creer une simple labyrinthe et on l'a afficher .  
+-Ainsi on obtient une version de jeu developpé du jeu au niveau graphisme il reste plus qu'a :
+	-ajouter les monstres ,les objets(potions,trésors , ...)  .
+	-Definir les collisions entre l'heros et les differentes obstacles.
+	-Ajouter la pesanteur .
+	-Ajouter les regles de jeu .
+----------------------------------------Review Sprint 3--------------------------------------------
+-Nous avons tout d'abord commencer à generer plusierus monstres en une seule partie.
+-Puis, on a créé une autre maze pour la consacrer à un autre niveau de difficulté.
+-On a créé une interface qui propose choisir le niveau de difficulté et selon lequel elle genere un certain nombre de monstres et une map differente.
+-On a ajouté des potions pour aider l'heros a survivre et triompher et un portail qui represente la fin de la prtie qui sera gagnée si l'heros y arrive.
+----------------------------------------Review Sprint 4--------------------------------------------
+-Nous avons tout d'abord commencer par modifier le principe du jeu: l'heros ne peut passé d'un niveau à un autre que lorsqu'il tue tous les heros,une clé s'affiche à la fin qui permet d'ouvrir le portail passant ainsi au niveau prochain.
+-Ensuite, on a ajouté des 'fire balls' qui animent l'attaque à distance de l'heros.
+-Puis, on a realisé la transition entre les niveaux.
+-On a aussi fait la partie qui concerne la visibilité limitée de l'heros, cependant cette dernière ralentit le jeu.
+-Pour l'amelioration du jeu, on peut faire les modifications suivantes :
+    - Ajouter les effets sonores.
+	- Ajouter les threads pour une meilleure fluidité du jeu.
+	- Ameliorer la partie 'visibilité'.
+	- Ajouter un menu.
+
+
+
+
+
+

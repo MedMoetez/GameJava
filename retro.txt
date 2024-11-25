@@ -1,0 +1,47 @@
+-----------------------------------------RetrospectiveSprint1--------------------------------------
+
+
+- Problemes rencontrés :
+	- Incapacité de faire une clé SSH sur gitlab.
+	- Erreurs lors de la compilation en Maven (en cours de résolution) .
+	- 
+- Reussite :
+	- Faire un Backlog initial expliquant les règles du jeu.
+	- Réalisation d'un premier diagramme UML.
+
+-----------------------------------------RetrospectiveSprint2--------------------------------------
+
+
+- Problemes rencontrés :
+	- Difficulté a retrouver des ressources .
+	- Gestion du temps consacré par rapport à chaque tache .
+- Reussite :
+	- Familiarisation avec l'outil Maven et resolution de tout les erreurs cités dans le sprint précedent.
+	- Réalisation d'un diagramme de classe detaillé.
+	- Réalisation de diagramme de sequence .
+-----------------------------------------RetrospectiveSprint3--------------------------------------
+- Problemes rencontrés :
+        - Difficultés dans l'unification des codes .
+        - Application des contraintes de gravité sur le monstre . 
+- Reussite :
+        -Application de la gravité sur l'heros et deplacement suivanat les blocs .
+        -Combat heros Vs monstre .
+        -Ajout des potions et de la portail.
+        -Realisation d'un objectif du jeu pour gagner la partie .
+		-Choix de niveau de Difficulté au debut de la partie .
+-----------------------------------------RetrospectiveSprint4--------------------------------------
+- Problemes rencontrés :
+        -La modification de visibilité rend le jeu lent.
+		-Gestion de temps.
+		-Des erreurs dans les tests avec la version récente de JUNIT.
+- Reussite :
+        -Realiser la transition entre le niveaux.
+		-Attaquer le monstre à distance.
+		-Realiser les tests.
+		-Amelioration du graphisme.
+
+
+
+
+
+

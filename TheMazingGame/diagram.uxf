@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1.0">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>702</x>
+      <y>510</y>
+      <w>210</w>
+      <h>594</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Hero&gt;&gt;
+Package: gamefunction
+
+--
+game : Game
+heroSpriteSheet : BufferedImage
+heroSize : int[2]
+heroDir : int
+moving : boolean
+attacking : boolean
+attackType : int
+animationsRight : BufferedImage [][]
+animationsLeft : BufferedImage [][]
+zoom : int
+xDrawoffset : float
+yDrawoffset : float
+aniTick : int
+aniSpeed : int
+aniIndex : int
+playerSpeed : float
+left,up,right,down,jump,inAir : boolean
+airSpeed : float
+gravity : float
+jumpSpeed : float
+fallSpeedAfterCollision : float
+heroString : String
+fireball : Fireball
+statusBarImg : BufferedImage
+statusBarWidth : int
+statusBarHeight : int
+statusBarX : int
+statusBarY : int
+healthBarWidth : int
+healthBarHeight : int
+healthBarXStart : int
+healthBarYStart : int
+attackBarWidth : int
+attackBarHeight : int
+attackBarXStart : int
+attackBarYStart : int
+maxHP : int
+currentHP : int
+healthWidth : int
+updateDmgTime : int
+dmgTick : int
+maxDmg : int
+currentDmg : int
+dmgBeforeFireball : int
+attackWidth : int
+attackBox : Rectangle2D.Float
+attackChecked : boolean
+attackDistance : int
+kill : int
+dmgPerSec : int
+FireballDmgUpdate : boolean
+fireballKeyPressed : boolean
+--
+setHeroSpriteSheetRight() : BufferedImage
+setHeroSpriteSheetLeft() : BufferedImage
+getHeroIcon(int line, int column) : BufferedImage
+loadAnimationRight() : BufferedImage[][]
+loadAnimationLeft() : BufferedImage[][]
+updateAnimationTick() : void
+setAnimation() : void
+updateDmgFireball() : void
+update() : void
+updateDmgPerSec() : void
+drawHero(Graphics g): void
+checkTouched() : void
+checkAttack() : void
+updateAttackBox() : void
+updateHP() : void
+changeHP() : void
+changeDmg(int value) : void
+updateDmg() : void
+initAttackBox() : void
+drawHealthBar(Graphics g) : void
+drawDamageBar(Graphics g) : void
+drawAttackBox(Graphics g) : void
+isMoving(): boolean
+setAttack(boolean attack) : void
+chooseAttack(int attack) : void
+updatePos() : void
+junp(): void
+resetInAir() : void
+updateXpos(): void
+getIconSize() : int[]
+getAttackBox() : Rectangle2D.Float
+flipW() : int
+isLeft() : boolean
+setLeft() : void
+isUp() : boolean
+setUp() : void
+isRight() : boolean
+setRight() : void
+isDown() : boolean
+setDown() : void
+setJump() : void
+isFireballKeyPressed() : boolean
+getHeroDMG() : int
+getHeroDir() : int
+setHeroDmg() : void
+setHeroDir() : void
+resetAll() : void
+spawn() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>162</x>
+      <y>216</y>
+      <w>228</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;MonsterManager&gt;&gt;
+Package:gamefunction
+{}
+--
+Monsters : ArrayList&lt;Monster&gt;
+difficulty : int
+nombreMonster : int
+monsterX : ArrayList&lt;Integer&gt;
+monsterY : ArrayList&lt;Integer&gt;
+game  : Game
+--
+generateMonsters() : void
+draw(Graphics g) : void
+resetMonsters() : void
+getMonsters() : ArrayList&lt;Monster&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>570</x>
+      <y>48</y>
+      <w>150</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Game&gt;&gt;
+Package: gamefunction
+{}
+--
+gameWindow : GameWindow
+gamePannel : GamePannel 
+gameThread  : Thread
+gameOverOverlay : GameOverOverlay
+tileM : TileManager
+hero : Hero
+monster : Monster
+monster1 : Monster
+monsterManager : MonsterManager
+objectManager : ObjectManager
+dificulty : int
+FPS_SET : int
+maze : Maze
+attack : Attack
+currentLevel : int
+transition : boolean
+gameWin : boolean
+gameOver : boolean 
+fireball : Fireball
+eManager : EnvironmentManager
+SCALE : float
+--
+starGame() : void
+initClasses() : void
+initHero() : Hero
+startGameLoop() : void
+run() : void
+resetAll() : void
+getFPS_SET() : int
+isTransition() : boolean
+getTileM() : TileManager
+getHero() : Hero
+getMonster() : Monster
+getMonster1() : Monster
+getMaze() : Maze
+getAttack() : Attack
+getObjectManager() : ObjectManager
+getGameOver() : boolean
+geteManager() : EnvironmentManager
+checkTouched(Rectangle2D.Float hitbox) : void 
+steGameOver(boolean gameOver) : void
+getGameOverOverlay() : GameOverOverlay
+getDificulty() : int
+setDificulty(int dificulty) : void
+getMonsterManager() : MonsterManager
+getFireball() : Fireball
+setTransition(boolean transition) : void
+isGameWin() : boolean
+setGameWin(boolean gameWin) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>342</y>
+      <w>186</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+</panel_attributes>
+    <additional_attributes>280.0;280.0;280.0;180.0;10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>324</x>
+      <y>90</y>
+      <w>258</w>
+      <h>186</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=0..n
+</panel_attributes>
+    <additional_attributes>10.0;10.0;320.0;230.0;410.0;290.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>384</x>
+      <y>288</y>
+      <w>192</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;300.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>42</y>
+      <w>330</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Attack&gt;&gt;
+Package:gamefunction
+{}
+--
+	MonsterManager : monsterManager;
+	Hero : hero;
+	Game : game;
+	ArrayList&lt;Monster&gt;: monsters;
+--
+- checkMonstersHit(Rectabgle2D.Float heroAttackBox) : void
+- checkMonsterHit(Rectabgle2D.Float heroAttackBox, Monster monster) : void
+- checkHeroHit(Hero hero, Monster monster) : void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>816</x>
+      <y>204</y>
+      <w>144</w>
+      <h>186</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;ObjectManager&gt;&gt;
+Package: objects
+{}
+--
+game : Game
+potionImgs : BufferedImage[]
+potions : ArrayList&lt;Potion&gt;
+portail : Portail
+key : Key
+difficulty : int
+numberOfMonsters : int
+--
+initPortal() : void
+generateObjects() : void
+checkObjectTouched(Rectangle2D.Float hitbox) : void
+applyEffectToPlayer(Potion p) : void
+loadImgs() : void
+update() : void
+draw(Graphics g) : void
+drawPotions(Graphics g) : void
+resetAllObjects() : void
+getPortail() : Portail
+getKey() : Key</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>714</x>
+      <y>264</y>
+      <w>114</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1116</x>
+      <y>312</y>
+      <w>144</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Portail&gt;&gt;
+Package: objects
+{}
+--
+aniTick : int
+aniSpeed : int
+aniIndex : int
+portailAnimation : BufferedImage[][]
+portailSprite  : BufferedImage
+portailStatic : BufferedImage
+portailSize : int[]
+zoom : float
+portalState : boolean
+game : Game
+hero : Hero
+portalOpen : boolean
+--
+setportailSprite() : BufferedImage 
+loadPortailAnimation() :  BufferedImage[][]
+getPortailIcon(int line, int column, BufferedImage heroSpriteSheet) : Bufferedimage
+updateAnimationTick() : void
+update() : void
+drawPortail(Graphics g) : void
+checkPortalReached(Hero hero) : void
+keyPressed(KeyEvent e) : void
+reset() : void
+setPortalState(boolean portalState) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1116</x>
+      <y>0</y>
+      <w>144</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Potion&gt;&gt;
+Package: objects
+{}
+--
+hoverOffset : float
+maxHoverOffset : int
+hoverDir : int
+--
+update() : void
+updateHover() : void
+resetPotion()  : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1254</x>
+      <y>288</y>
+      <w>216</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>340.0;10.0;200.0;10.0;200.0;150.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>564</x>
+      <y>636</y>
+      <w>150</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;240.0;230.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>444</x>
+      <y>780</y>
+      <w>192</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Package: gamefunction
+{}
+--
+x,y : float
+entity_height, entity_width : float
+hitbox : Rectangle2D.Float
+--
+drawHitbox() : void
+initHitbox() : void
+getHitbox() : Rectangle2D.Float
+getEntityXPosNextToWall(): float
+isEntityOnFloor() : boolean
+getEntityYPosUnderRoofOrAboveFloor() : float
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>174</x>
+      <y>528</y>
+      <w>174</w>
+      <h>390</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Monster&gt;&gt;
+Package::gamefunction
+{Some Properties}
+--
+monsterSpriteSheetLeft, monsterSpriteSheetRight, monsterIcon : BufferedImage
+monsterSizeL : int [] 
+moving : boolean 
+attacking : boolean 
+inAir : boolean 
+fallSpeed : float 
+gravity : float	
+attackType : int
+animationsLeft, animationsRight : BufferedImage [][] 
+maze : int[][] 
+monsterAction : int 
+x, y : float
+animationsMonster: BufferedImage[][] 
+aniTick : int
+aniSpeed : int
+aniIndex : int
+intmazeMatrix : int[][]
+hero : Hero
+monsterDir : int
+tileY : int
+attackDistance : int
+yDrawoffset : float
+xDrawoffset : float
+Rectangle2D.Float attackBox
+maxHp : int
+currentHp : int
+monsterDmg : int
+active : boolean 
+attackChecked : boolean 
+monsterString : String 
+game : Game
+file : File
+--
+initAttackBox() : void
+setMonsterSpriteSheetLeft() : BufferedImage
+setMonsterSpriteSheetRight() : BufferedImage
+getMonsterIcon() : BufferedImage
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>636</y>
+      <w>192</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>300.0;240.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>762</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>/AbstractClass/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>306</x>
+      <y>342</y>
+      <w>318</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;310.0;10.0;170.0;500.0;170.0;500.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1458</x>
+      <y>204</y>
+      <w>144</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;GameObject&gt;
+Package: objects
+{}
+--
+x : int
+y : int
+objType : int
+hitbox : Rectangle.Float
+active : boolean
+xDrawoffset : int
+yDrawoffset : int
+--
+initHitbox(int width, int height) : void
+drawHitbox(Graphics g) : void
+reset() :void
+getObjType() : int
+getHitbox() : Rectangle2D.Float
+getxDrawoffset() : void
+getyDrawoffset() : void
+isActive() : boolean
+setActive(boolean active) : void
+setHitbox(Rectangle2D.Float hitbox) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1254</x>
+      <y>54</y>
+      <w>216</w>
+      <h>204</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>340.0;320.0;200.0;320.0;200.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>954</x>
+      <y>282</y>
+      <w>174</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0;140.0;140.0;270.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>954</x>
+      <y>72</y>
+      <w>174</w>
+      <h>174</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;260.0;140.0;260.0;140.0;10.0;270.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>360</y>
+      <w>30</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=0..n
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1500</x>
+      <y>186</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>/AbstractClass/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>714</x>
+      <y>324</y>
+      <w>372</w>
+      <h>312</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..4
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;10.0;600.0;500.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1074</x>
+      <y>618</y>
+      <w>156</w>
+      <h>186</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Maze&gt;&gt;
+Package: gamefunction
+{}
+--
+mazeNumero : int
+adressesMazes : ArrayList&lt;String&gt;
+adresseChoisie : String
+difficulty :  int
+mazeMatrix : int[][]
+game : Game
+--
+LoadMaze(String mapPath) : int[][]
+drawMaze(Graphics2D g2) : void
+niveau_dif() : void
+obstacle(): boolean
+positionAdmissible(): boolean
+getMazeMatrix() : int[][]
+setMazeMatrix(int[][] mazeMatrix) : void
+reset() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1074</x>
+      <y>852</y>
+      <w>156</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Fireball&gt;&gt;
+Package: objects
+
+--
+hero : Hero
+hitbox : Rectangle2D.Float
+x, y : int
+dir : int
+fireballHeight : float
+fireBallWidth : float
+speed : int
+fireballRange : int
+active : boolean
+heroHitbox : Rectangle2D.Float
+fireballSpriteSheet : BufferedImage
+fireballAnimation : BufferedImage[]
+aniTick : int
+aniSpeed : int
+aniIndex : int
+yoffset : float
+--
+setDirection() : void
+updatePos() : void
+checkFireballRange() : boolean
+setPos() : void
+loadFireballSpriteSheet() : void
+loadAnimation() :  void
+getFireballIcon(): BufferedImage
+updateAnimationTick() : void
+update() : void
+drawFireball() : void
+drawHitbox() : void
+getHitbox() : Rectangle2D.Float
+isActive() : boolean
+setActive() : void
+resetFireball() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>906</x>
+      <y>888</y>
+      <w>180</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..1</panel_attributes>
+    <additional_attributes>280.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1122</x>
+      <y>156</y>
+      <w>144</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Key&gt;&gt;
+Package: objects
+{}
+--
+hoverOffset : float
+maxHoverOffset : int
+hoverDir : int
+keyAnimation : BufferedImage[][] 
+keySprite : BufferedImage
+keySize : int[] 
+keyState : boolean
+active : boolean
+aniTick : int 
+aniSpeed : int 
+aniIndex : int 
+--
+setKeyState(boolean keyState) : void 
+etActive(boolean active) : void 
+isKeyState() : boolean 
+isActive() : boolean 
+update() : void
+updateHover() : void
+reset()  : void
+setKeySprite() : BufferedImage </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1260</x>
+      <y>222</y>
+      <w>204</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>320.0;80.0;90.0;80.0;90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>954</x>
+      <y>258</y>
+      <w>180</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;20.0;280.0;20.0</additional_attributes>
+  </element>
+</diagram>

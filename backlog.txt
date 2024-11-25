@@ -1,0 +1,99 @@
+		< Backlog sprint 1 >
+
+HC: il manque les priorité
+HC: il manque le backlog de sprint
+HC: je n'ai pas accès à Jira
+HC: le diagramme de classes est incomplet 
+
+
+-Les caracters se deplacent dans la labyrinthe.
+-Le monstre peut attaquer ou tuer l'heros.
+HC: quelle différence entre attaquer et tuer?
+-L'heros peut attaquer ou tuer le monstre .
+HC: quelle différence entre attaquer et tuer?
+HC: comment?
+-la configuration du labyrinthe et les propriétes des caracteres dependent du niveau choisie au debut du jeu . 
+HC: la suite est juste une description plsu détaillée des tâches précédentes
+-l'heros est mort lorsque ses points de vie atteignent 0.
+-le monstre est mort lorsque ses points de vie atteignent 0.
+-lors d'un combat entre un monstre et un heros ,les regles suivants s'appliquent :
+	-chaque caractere pert des points de vie egals au points d'attaques de son adversaire .
+	-ce processus ce répete jusqu'à ce que les points de vie de l'un des caracteres sont à 0.
+	-si l'heros gagne le combat, il récupere tous ses points de vie initiaux.(dans le niveau 1).
+
+
+		< Backlog sprint 2 >
+
+
+-Réalisation d'une version graphique du jeu :
+
+	-creation de 3 exemplaires de labyrinthe correspondant a chaque niveau du jeu .
+	-l'hero se deplace  librement sur la labyrinthe grace au touche 'z' , 'q' ,'s' ,'d'.
+	-Realisation d'un arriere plan et d'un cadre du jeu ou l'heros se deplacera .
+	-l'hero attaque sur la labyrinth grace au touche 'click droit ' et  'click gauche'
+
+- coder l'affichage de la labyrinthe dans la classe Maze :
+	
+	-import des blocks necessaires (cadre , arriere plan ,labyrinthe ...)
+	-Trouver une methode pour placer ces blocks dans la fenetre . 
+
+-Avancement au niveau du codage de la partie graphique :
+
+	- Ajout de l'animation de l'heros  
+		-animation attaque simple  : 'click gauche' 
+		-animation attaque double  : 'click droit'
+		-animation deplacement : 'z' , 'q' ,'s' ,'d'
+		-animation idle : par default
+
+-Recherche des ressources necessaires au jeu .
+
+	-les blocs de la labyrinthe . 
+	-les blocs de l'arriere plan et du cadre . 
+	-monstres .
+	-potions , clé , tresor.
+
+-Coder la merhode responsable de la creation d'une labyrinthe a partir d'un fichier texte coder en chiffres .
+
+
+            < Backlog sprint 3 >
+
+
+-Réalisation d'une interface graphique proposant la difficulté du jeu :
+    
+        -creation de 4 exemplaires de labyrinthe correspondant à chaque niveau de difficulté du jeu .
+        -chaque niveau correspond à un nombre de monstre et une map differente .
+        -
+
+-Avancement dans le jeu :
+        -Mettre des potions qui aident l'heros a gagner son combat .
+        -Appliquer la gravité sur les charachters .
+        -L'heros peut sauter en cliquant sur 'ESPACE' et retombe grace à la gravité .
+        -En cliquant sur la touche 'F'en arriavnt sur la portail, l'heros gagne la partie .
+        -En cliquant sur la touche 'Esc' à la fin de la partie, le joueur peut rejouer .
+
+
+-Avancement dans la version graphique du jeu :
+        -Affichage des points de vie de l'heros ainsi que son degat .
+        -Generation d'un nombre de monstres dependant du niveau choisi de la difficulté .
+        -Lorsque les degats du monstre depassent ses points de vie, il meurt et disparait de l'interface .
+        -Lorsque l'heros est tué, la partie est finie et une nouvelle interface apparait proposant une nouvelle partie . 
+ 
+
+            < Backlog sprint 4 > 
+
+
+		-Restreindre la visibilité de l'heros.
+		-transition entre niveaux.
+		-Attaque à distance :---> click 'R' ou mouse middle click (si barre d'attaque>=50%) :---> -50% barre d'attaque .
+
+
+
+
+
+
+
+
+
+
+
+
